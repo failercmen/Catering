@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Titolo Pagina</title>
+<style></style>
+<link rel="stylesheet" href="/css/genericForm.css" type="text/css" />
+<script></script>
+</head>
+<body>
+
+	<h2>Inserisci i dati di un buffet</h2>
+
+	<div id="tutto">
+
+		<div id="containerDati">
+
+
+
+			<form th:action="@{/admin/buffet}" method="POST"
+				 th:object="${buffet}">
+
+				<div>
+					<div>
+						<span>Nome:</span> <span><input type="text"
+							 th:field="*{nome}" /></span>   <span
+							th:if="${#fields.hasErrors('nome')}"
+							th:errors="${buffet.nome}" th:style="'color:red'"></span>  
+					</div>
+					<div>
+						<span>Descrizione:</span> <span><input type="text"
+							 th:field="*{descrizione}" /></span>    <span
+							th:if="${#fields.hasErrors('descrizione')}"
+							th:errors="${buffet.descrizione}" th:style="'color:red'"></span>  
+					</div>
+					<div>
+
+						<span>Chef:</span> <select th:field="*{chef}">
+							<option th:each="chef: ${listaCuochi}" th:value="${chef.id}"
+								th:text="${chef.nome}"></option>
+
+						</select>
+
+					</div>
+
+
+					<div>
+						Seleziona i <em>piatti</em> da aggiungere:
+						<div th:each="piatto : ${listaPiatti}">
+							<input type="checkbox" th:field="*{listaPiatti}"
+								th:value="${piatto.id}" /> <span th:text="${piatto.nome}"></label>
+						</div>
+					</div>
+
+
+
+					<div>
+						<span><button type="submit">Conferma Buffet</button></span>
+					</div>
+
+				</div>
+			</form>
+
+		</div>
+
+	</div>
+
+	<hr>
+
+	<footer>
+		<a th:href="@{/admin/home}">Home Amministratore</a>
+
+	</footer>
+
+</body>
+</html>

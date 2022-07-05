@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Titolo Pagina</title>
+<style></style>
+<link rel="stylesheet" href="/css/genericForm.css" type="text/css" />
+<script></script>
+</head>
+<body>
+
+	<h2>Seleziona il buffet da modificare</h2>
+
+	<div id="tutto">
+
+		<div id="containerDati">
+
+
+			<form th:action="@{/updateBuffetLista}" method="GET" >
+				<ul>
+					<li th:each="buffet : ${listaBuffet}"><a href="buffet.html"
+						th:href="@{'/buffet' + '/' + ${buffet.id}}"
+						th:text="${buffet.nome}">Buffet di Carne</a> <a
+						th:href="@{'/updateBuffet' + '/' + ${buffet.id}}"> <strong>MODIFICA BUFFET</strong>
+					</a></li>
+				</ul>
+			</form>
+			
+		</div>
+	</div>
+	
+	<hr>
+
+	<footer>
+		<a th:href="@{/home}">Annulla e torna alla home utente</a> o <a
+			th:href="@{/admin/home}">Anulla e torna alla home ADMIN</a>
+	</footer>
+</body>
+</html>

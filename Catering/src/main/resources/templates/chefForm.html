@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>chef Form</title>
+<link rel="stylesheet" href="/css/genericForm.css" type="text/css" />
+</head>
+<body>
+
+	
+		<h2>Inserisci i dati di un cuoco</h2>
+	
+
+
+	<div id="tutto">
+
+		<div id="containerDati">
+
+
+			<form th:action="@{/admin/chef}" method="POST" th:object="${chef}">
+
+				<div>
+					<div>
+						<span>Nome:<input type="text"
+							th:field="*{nome}" /></span>
+							<span th:if="${#fields.hasErrors('nome')}"
+							th:errors="${chef.nome}" th:style="'color:red'"></span>
+					</div>
+					<div>
+						<span>Cognome:<input type="text"
+							th:field="*{cognome}" /></span>
+						<span th:if="${#fields.hasErrors('cognome')}"
+							th:errors="${chef.cognome}" th:style="'color:red'"></span>
+					</div>
+
+					<div>
+						<span>Nazionalita':<input type="text"
+							th:field="*{nazionalita}" /></span>
+							<span th:if="${#fields.hasErrors('nazionalita')}"
+							th:errors="${chef.nazionalita}" th:style="'color:red'"></span>
+					</div>
+
+					<div>
+						<span><button type="submit">Conferma Chef</button></span>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	
+	<hr>
+
+	<footer>
+		<a th:href="@{/admin/home}">Home Amministratore</a>
+
+
+	</footer>
+	
+
+</body>
+</html>

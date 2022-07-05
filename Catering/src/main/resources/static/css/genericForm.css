@@ -1,0 +1,55 @@
+body {
+	font-family: Helvetica;
+	text-align: center;
+	background-color: #99ebff;
+	background-image: url("/images/sfondoLegno.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+span {
+	font-size: 25px;
+}
+
+h2 {
+	font-size: 50px;
+}
+
+div{
+	font-size: 25px;
+}
+
+em{
+	color:purple;
+}
+
+option{
+	font-size: 20px;	
+}
+
+
+button{
+	color:white;	
+	background-color: black;
+	font-size: 100%;
+}
+
+button:hover{
+	background-color: purple;
+}
+
+#containerDati {
+	align-items: center;
+	justify-content: space-around;
+	display: flex;
+	flex-direction: column;
+	border: 3px solid black;
+	width: 500px;
+}
+
+#tutto {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border: 10 px solid black;
+}

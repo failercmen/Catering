@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Lista Chef</title>
+<style></style>
+<link rel="stylesheet" href="/css/genericList.css" type="text/css" />
+<script></script>
+</head>
+<body>
+
+	<h1>Buffet Alperizi & Co.</h1>
+	<h2>Ecco una lista dei Chef</h2>
+
+	<div id="tutto">
+
+		<div id="containerDati">
+
+			<ul>
+				<li th:each="chef : ${listaChef}"><a href="chef.html"
+					th:href="@{'/chef' + '/' + ${chef.id}}"
+					th:text="${chef.nome} + ' ' + ${chef.cognome}">NomeECognomeChef</a>
+				</li>
+			</ul>
+
+		</div>
+	</div>
+
+	<footer>
+		<a th:href="@{/home}">Torna alla home</a> o <a
+			th:href="@{/admin/home}">Torna alla home ADMIN</a>
+	</footer>
+
+</body>
+</html>

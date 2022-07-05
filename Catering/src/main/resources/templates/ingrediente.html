@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Ingrediente</title>
+<style></style>
+<link rel="stylesheet" href="/css/genericElements.css" type="text/css" />
+<script></script>
+</head>
+<body>
+
+	<div>
+		<div th:if="${ingrediente}" th:object="${ingrediente}">
+			<h1 th:text="*{nome}">nome</h1>
+
+			<div id="tutto">
+
+				<div id="containerDati">
+
+					<h2>
+						<Span>Origine:</Span> <span th:text="*{origine}">origine </span>
+					</h2>
+					<h3>
+						Descrizione: <span th:text="*{descrizione}">descrizione</span>
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div th:unless="${ingrediente}">Questo ingrediente non esiste</div>
+	</div>
+
+	<hr>
+
+	<footer>
+		<a th:href="@{/home}">Torna alla home</a> o <a
+			th:href="@{/admin/home}">Torna alla home ADMIN</a>
+	</footer>
+
+</body>
+</html>

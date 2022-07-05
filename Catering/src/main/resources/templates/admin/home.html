@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Titolo Pagina</title>
+    <link rel="stylesheet" href="/css/home.css" type="text/css" />
+  </head>
+  <body>
+    
+    <div class ="titolo">
+          <h1>Servizio Catering Alperizi & co.</h1>
+    </div>
+    
+    <h2>
+    Benvenuto <strong  th:text="${#authentication.getPrincipal().getUsername()}"></strong>
+	<span th:text="${#authentication.getPrincipal().authorities}"></span>
+    </h2>
+    
+    
+    <div id ="flex-container">
+      
+      <h2 class="sottotitolo">
+      I NOSTRI BUFFET <a th:href="@{/buffet}">Elenco Buffet</a>
+    </h2>
+      
+      <div class="box1">
+		<img src ="/images/buffet.jpg"/>
+      </div>
+      
+      
+    </div>      
+   
+    
+    <div id ="flex-container">
+      
+      <h2 class="sottotitolo">
+      I NOSTRI CUOCHI <a th:href="@{/chef}">Elenco Chef</a>
+    </h2>
+      
+     <div class="box1">
+		<img src ="/images/team-cuochi.jpg"/>
+      </div>
+    
+    </div>
+    
+    
+     <div id ="flex-container">
+      
+      <h2 class="sottotitolo">
+      I NOSTRI INGREDIENTI <a th:href="@{/ingrediente}">Elenco Ingredienti</a>
+    </h2>
+    
+      <div class="box1">
+		<img src ="/images/ingredienti.jpg"/>
+      </div>
+      
+    </div>
+    
+    
+     <div id ="flex-container">
+      
+      <h2 class="sottotitolo">
+      I NOSTRI PIATTI <a th:href="@{/piatto}">Elenco Piatti</a>
+    </h2>
+    
+       <div class="box1">
+		<img src ="/images/piatti.jpg"/>
+      </div>
+    
+     </div>
+    
+    <hr>
+    
+    	<div id ="containerAdmin"><span>Azioni dell'admin:</span>
+    
+    	<div>
+			<a th:href="@{/admin/buffet}">Inserisci nuovo Buffet</a>
+   		</div>
+   		
+   		<div>
+			<a th:href="@{/updateBuffetLista}">Modifica Buffet</a>
+   		</div>
+    
+   		 <div>
+			<a th:href="@{/admin/chef}">Inserisci nuovo Cuoco</a>
+   		</div>
+   		
+   		 <div>
+			<a th:href="@{/admin/ingrediente}">Inserisci nuovo Ingrediente</a>
+   		</div>
+   		
+   		 <div>
+			<a th:href="@{/admin/piatto}">Inserisci nuovo Piatto</a>
+   		</div>
+   		
+   		
+   		</div>
+   		
+   		<hr>
+   		
+   		<footer>
+          <a th:href="@{/home}">Home Utente</a>
+   			
+			<a th:href="@{/logout}">Logout</a>
+   			
+   		</footer>
+      
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Titolo Pagina</title>
+<style></style>
+<link rel="stylesheet" href="/css/genericForm.css" type="text/css" />
+<script></script>
+</head>
+<body>
+
+
+	<h2>Inserisci i dati di un ingrediente</h2>
+
+	<div id="tutto">
+
+		<div id="containerDati">
+
+			<form th:action="@{/admin/ingrediente}" method="POST"
+				th:object="${ingrediente}">
+
+				<div>
+					<div>
+						<span>Nome:</span> <span><input type="text"
+							th:field="*{nome}" /></span> 
+							<span th:if="${#fields.hasErrors('nome')}"
+							th:errors="${ingrediente.nome}" th:style="'color:red'"></span>
+					</div>
+
+					<div>
+						<span>Origine:</span> <span><input type="text"
+							th:field="*{origine}" /></span> <span
+							th:if="${#fields.hasErrors('origine')}"
+							th:errors="${ingrediente.origine}" th:style="'color:red'"></span>
+					</div>
+
+					<div>
+						<span>Descrizione:</span> <span><input type="text"
+							th:field="*{descrizione}" /></span> <span
+							th:if="${#fields.hasErrors('descrizione')}"
+							th:errors="${ingrediente.descrizione}" th:style="'color:red'"></span>
+					</div>
+
+					<div>
+						<span><button type="submit">Conferma Ingrediente</button></span>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</div>
+
+	<hr>
+
+	<footer>
+		<a th:href="@{/admin/home}">Home Amministratore</a>
+
+	</footer>
+
+</body>
+</html>

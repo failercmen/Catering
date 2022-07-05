@@ -1,0 +1,74 @@
+body {
+  font-family: Helvetica; 
+  text-align: center;
+  background-color: #99ebff;
+  background-image: url("/images/sfondoLegno.jpg");
+  background-repeat:no-repeat;
+  background-size: cover;
+}
+
+
+
+h1 {
+  text-align: center;
+  font-family: Lucida Handwriting;
+  color: rgb(206,41,41);
+  font-size:50px;;
+}
+
+
+p{
+  text-align: center;
+}
+
+h2{
+  position: 10px top
+}
+
+
+#flex-container{
+  display:flex;
+  justify-content:center;
+  
+}
+
+
+
+h2{
+  color: green;
+   line-height: 150%;
+    text-shadow: -1px 0 #FF0000, 0 1px #FF0000, 1px 0 #FF0000, 0 -1px #FF0000;
+
+}
+
+.flex-item2{
+  width: 50%;
+  height : 270px;
+  margin: 10px;
+  background-color:  rgb(217,108,20);
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  border:5px solid yellow;
+  border-radius: 30%;
+ 
+  
+}
+
+
+.titolo{
+  border: 2px solid yellow;
+  border-radius: 30%;
+  background-color: orange;
+}
+
+#box{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around; 
+  height:200px;
+}
+
+.confermaPassword{
+  margin-right:50px;
+}

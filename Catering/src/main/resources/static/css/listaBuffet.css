@@ -1,0 +1,83 @@
+h1{
+  text-align:center;
+}
+
+body{
+  background-image: url("https://img.freepik.com/free-photo/beige-wooden-textured-flooring-background_53876-106144.jpg?t=st=1655248112~exp=1655248712~hmac=80e28f373e4dd2b7a27788ef6552fa164c66f6ba610c0c2d0bba2cb02a9d838f&w=1380");
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+  
+}
+#flex-container{
+  display: flex;
+  height: 150px;
+  margin-bottom: 15px;
+}
+
+
+.flex-item{
+ width: 50%;
+ border: 3px solid; 
+  text-align: center;
+}
+
+.flex-item2{
+ width: 50%;
+ border: 3px solid;
+  text-align :center;
+}
+
+
+.immagineCibo img{
+  width:190px;
+  position: relative;
+}
+
+/*
+.immagineCibo img:hover{
+  width:50%;
+  
+}*/
+
+
+.dropdown {
+    position: relative;
+  	bottom:55px;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: lightgrey;
+    min-width: 200px;
+    z-index: 1;
+}
+
+.dropbtn {
+    background-color: Orange;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown-content p {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover{
+  background-color: white;
+  }
+  
+.dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+.dropdown:hover .dropbtn {
+  background-color: grey;
+  }
+

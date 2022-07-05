@@ -1,0 +1,9 @@
+body {
+  font-family: Helvetica; 
+  text-align: center;
+  background-color: #99ebff;
+  background-image: url("/images/sfondoLegno.jpg");
+  border: 10px solid;
+  background-repeat:no-repeat;
+  background-size: cover;
+}

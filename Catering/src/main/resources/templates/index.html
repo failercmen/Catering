@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>SIW</title>
+    <link rel="stylesheet" href="/css/index.css" type="text/css" />
+  </head>
+  <body>
+    <div class ="titolo">
+          <h1>Servizio Catering Alperizi & co.</h1>
+    </div>
+ 
+    <h2>
+      Benvenuto, qui potrai trovare una serie di Buffet con altrettanti cibi, ingredienti e gli Chef che l'hanno organizzati
+    </h2>
+    <img src ="/images/immagineIndex.jpg"/>
+    
+    <h2>
+    <a th:href="@{/login}" >ACCEDI</a> PER USUFRUIRE DEI NOSTRI SERVIZI
+    </h2>
+    
+    
+    <!--   chiusura flexContainer  -->
+    
+   
+     <h2>
+      SE NON SEI REGISTRATO, <a th:href="@{/register}">REGISTRATI!!!</a>
+    </h2>
+    
+    
+  </body>
+</html>

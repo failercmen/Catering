@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Titolo Pagina</title>
+    <link rel="stylesheet" href="/css/home.css" type="text/css" />
+    <style></style>
+    <script></script>
+  </head>
+  <body>
+    
+   <div class ="titolo">
+          <h1>Servizio Catering Alperizi & co.</h1>
+    </div>
+    
+    <h2>
+    Benvenuto <strong  th:text="${#authentication.getPrincipal().getUsername()}"></strong>
+	<span th:text="${#authentication.getPrincipal().authorities}"></span>
+    </h2>
+    
+    
+    <div id ="flex-container">
+      
+      <h2 class="sottotitolo">
+      I NOSTRI BUFFET <a th:href="@{/buffetUser}">Elenco Buffet</a>
+    </h2>
+      
+      <div class="box1">
+		<img src ="/images/buffet.jpg"/>
+      </div>
+      
+      
+    </div>      
+   
+    
+    <div id ="flex-container">
+      
+    <h2 class="sottotitolo">
+      I NOSTRI CUOCHI <a th:href="@{/chefUser}">Elenco Chef</a>
+    </h2>
+      
+     <div class="box1">
+		<img src ="/images/team-cuochi.jpg"/>
+      </div>
+    
+    </div>
+    
+    
+     <div id ="flex-container">
+      
+      <h2 class="sottotitolo">
+      I NOSTRI INGREDIENTI <a th:href="@{/ingredienteUser}">Elenco Ingredienti</a>
+    </h2>
+    
+      <div class="box1">
+		<img src ="/images/ingredienti.jpg"/>
+      </div>
+      
+    </div>
+    
+    
+     <div id ="flex-container">
+      
+      <h2 class="sottotitolo">
+      I NOSTRI PIATTI <a th:href="@{/piattoUser}">Elenco Piatti</a>
+    </h2>
+    
+     <div class="box1">
+		<img src ="/images/piatti.jpg"/>
+      </div>
+    
+     </div>
+    
+   	<hr>
+   		
+   		<footer>
+          <a th:href="@{/home}">Home Utente</a>
+   			
+			<a th:href="@{/logout}">Logout</a>
+   			
+   		</footer>
+      
+  </body>
+</html>

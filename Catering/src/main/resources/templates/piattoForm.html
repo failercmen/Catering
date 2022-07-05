@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Piatto Form</title>
+<style></style>
+<link rel="stylesheet" href="/css/genericForm.css" type="text/css" />
+<script></script>
+</head>
+<body>
+
+
+	<h2>Inserisci i dati di un piatto</h2>
+
+
+	<div id="tutto">
+
+		<div id="containerDati">
+
+
+			<form th:action="@{/admin/piatto}" method="POST"
+				th:object="${piatto}">
+
+				<div>
+					<div>
+						<span>Nome:</span> <span><input type="text"
+							th:field="*{nome}" /></span> 
+							<span th:if="${#fields.hasErrors('nome')}"
+							th:errors="${piatto.nome}" th:style="'color:red'"></span>
+					</div>
+
+					<div>
+						<span>Descrizone:</span> <span><input type="text"
+							th:field="*{descrizione}" /></span>
+								<span th:if="${#fields.hasErrors('descrizione')}"
+							th:errors="${piatto.descrizione}" th:style="'color:red'"></span>
+
+					</div>
+
+					<div>
+						Seleziona gli ingredienti del <em>piatto</em>:
+						<div th:each="ingrediente : ${listaIngredienti}">
+							<input type="checkbox" th:field="*{listaIngredienti}"
+								th:value="${ingrediente.id}" /> <label
+								th:text="${ingrediente.nome}"></label>
+						</div>
+					</div>
+
+					<div>
+
+						<span><button type="submit">ConfermaPiatto</button></span>
+					</div>
+
+				</div>
+			</form>
+
+		</div>
+
+	</div>
+
+	<hr>
+
+	<footer>
+		<a th:href="@{/admin/home}">Home Amministratore</a>
+
+	</footer>
+
+
+</body>
+</html>

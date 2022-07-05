@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Conferma Modifiche</title>
+<style></style>
+<link rel="stylesheet" href="/css/genericForm.css" type="text/css" />
+<script></script>
+</head>
+<body>
+
+	<h2>Modifica il buffet</h2>
+
+	<div id="tutto">
+
+		<div id="containerDati">
+
+			
+			<form th:action="@{'/updateBuffet' +'/' + ${buffet.id} }" method='POST'
+				th:object="${buffet}">
+
+				<div>
+					<div>
+						<span>Nome:</span> <span><input type="text"
+							th:field="${buffet.nome}" /></span>
+
+					</div>
+					<div>
+						<span>Descrizione:</span> <span><input type="text"
+							th:field="${buffet.descrizione}" /></span>
+
+					</div>
+					<div>
+
+						<span>Chef:</span> <select th:field="${buffet.chef}">
+							<option th:each="chef: ${listaCuochi}" th:value="${chef.id}"
+								th:text="${chef.nome}"></option>
+
+						</select>
+
+					</div>
+
+
+					<div>
+						Seleziona se vuoi altri <em>piatti</em> da aggiungere:
+						<div th:each="piatto : ${listaPiatti}">
+							<input type="checkbox" th:field="${buffet.listaPiatti}"
+								th:value="${piatto.id}" /> <span th:text="${piatto.nome}"></label>
+						</div>
+					</div>
+
+
+
+					<div>
+						<span><button type="submit" >Conferma
+								Buffet</button></span>
+					</div>
+
+				</div>
+			</form>
+
+		</div>
+
+	</div>
+
+	<hr>
+
+	<footer>
+		<a th:href="@{/admin/home}">Home Amministratore</a>
+
+	</footer>
+
+</body>
+</html>
+
